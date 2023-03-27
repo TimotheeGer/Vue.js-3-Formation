@@ -12,7 +12,7 @@
 
 ➡️ Apprendre à hiérarchiser une application à l'aide de composants
 
-➡️ Utiliser l'nterface en ligne de commande Vue-Cli (création d'applications, render methods, JSX, composants ➡️ ➡️ fonctionnels).
+➡️ Utiliser l'nterface en ligne de commande Vue-Cli (création d'applications, render methods, JSX, composants fonctionnels).
 
 ➡️ Faciliter la communication entre composants avec le gestionnaire d'état Vuex, ou avec des observable.
 
