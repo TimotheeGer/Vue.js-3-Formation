@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>projet1-09</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+   
+    <div id="app">
+        <p>nom : <span v-text="personne.nom"></span></p>
+        <p>prenom : <span v-text="personne.prenom"></span></p>
+        <p>age : <span v-text="personne.age"></span></p>
+    </div>
+   
+   <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    personne: {
+                        nom: 'Doe',
+                        prenom: 'John',
+                        age: 25
+                    }
+                }
+            }
+        });
+        const vm = app.mount('#app');
+        vm.personne.prenom = 'jane';
+
+        setTimeout( () => {
+            console.log("le delai de 2 seconde est ecoule!");
+            vm.personne.prenom = 'tim';
+        }, 2000)
+
+    </script>
+
+</body>
+</html>
