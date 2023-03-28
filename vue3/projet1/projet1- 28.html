@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>projet1-27</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <div v-for="(el, index) in elements">
+            {{el}}
+            <button @click="ft_delete(index, el)">delete</button>
+        </div>
+    </div>
+
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    elements: ['premier', 'deuxieme', 'troisieme', 'quatrieme']
+                }
+            },
+            methods: {
+                ft_delete(index, el) {
+                    console.log("element === ", el);
+                    // this.elements.splice(index, 1);
+                    this.elements = this.elements.filter(x => x !== el);
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+
+</body>
+
+</html>

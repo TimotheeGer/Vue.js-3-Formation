@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>projet1-22</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+   
+    <div id="app">
+        <div @keydown="actionParent">
+            <input type="text" @keydown="action($event)">
+        </div>
+    </div>
+   
+   <script>
+        app = Vue.createApp({
+            methods: {
+                action(ev) {
+                    console.log("evenement traiter dans le impute")
+                    ev.preventDefault();
+                    ev.stopPropagation();
+                },
+                actionParent() {
+                    console.log("evenement traiter dans le parent")
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+
+</body>
+</html>

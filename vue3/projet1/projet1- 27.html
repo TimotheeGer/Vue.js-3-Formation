@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>projet1-27</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>Quel langage de prog connaissez vous ?</p>
+        <input type="text" v-model="unLang">
+        <input type="button" value="valider" @click="ajouter">
+        <ul>
+            <li v-for="lan in langages" >{{lan}}</li>
+        </ul>
+    </div>
+
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    unLang: '',
+                    langages: []
+                }
+            },
+            methods: {
+                ajouter() {
+                    this.langages.push(this.unLang);
+                    this.unLang = '';
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+
+</body>
+
+</html>
