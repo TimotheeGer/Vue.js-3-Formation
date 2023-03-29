@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>projet1-27</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .rouge {
+            color: red;
+        }
+        li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>Quel langage de prog connaissez vous ?</p>
+        <input type="text" v-model="unLang" @keyUp.enter="ajouter">
+        <input type="button" value="valider" @click="ajouter">
+        <ul>
+            <li v-for="lan in langages">
+                <input type="checkbox" v-model="lan.etatCase">
+                <span :class="{rouge:lan.etatCase}">
+                    {{lan.lang}}
+                    <a v-if="lan.etatCase">est cocher</a>
+                    <a v-else>est decocher</a>
+                </span>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    unLang: '',
+                    langages: []
+                }
+            },
+            methods: {
+                ajouter() {
+                    this.langages.push(
+                        {
+                            lang: this.unLang,
+                            etatCase: false
+                        }
+                    );
+                    // this.unLang = '';
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+
+</body>
+
+</html>

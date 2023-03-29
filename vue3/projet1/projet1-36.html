@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>projet1-36</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+   
+    <div id="app">
+        Couleur
+        <select v-model="couleur">
+            <option value="black" selected>Noir</option>
+            <option value="red" selected>Rouge</option>
+            <option value="green" selected>Vert</option>
+            <option value="blue" selected>Bleu</option>
+        </select>
+        Taille
+        <select v-model="taille">
+            <option value="16px" selected>16px</option>
+            <option value="25px" selected>25px</option>
+            <option value="40px" selected>40px</option>
+            <option value="60px" selected>60px</option>
+        </select>
+        <p :style="{color: couleur, fontSize: taille}">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+   
+    </div>
+   
+   <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    couleur: 'black',
+                    taille: '16px'
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+
+</body>
+</html>
